@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "backstopjs": "^6.2.2",
     "gh-pages": "^5.0.0",
     "node-sass": "^9.0.0",
     "sass": "^1.62.1"
@@ -9,7 +10,8 @@
   "description": "Kulkurin Antiikki webpage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx backstop test --config=\"backstop.config.js\"",
+    "test:approve": "npx backstop approve --config=\"backstop.config.js\"",
     "sass": "node-sass scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
   },
