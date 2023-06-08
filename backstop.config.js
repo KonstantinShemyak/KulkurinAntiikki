@@ -1,3 +1,21 @@
+const defaults = {
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+}
+
 module.exports =
 {
   "id": "backstop_default",
@@ -17,25 +35,26 @@ module.exports =
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Entry page",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "label": "index",
       "url": "./dist/index.html",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      ...defaults,
+    },
+    {
+      "label": "about",
+      "url": "./dist/about.html",
+      ...defaults,
+    },
+    {
+      "label": "contacts",
+      "url": "./dist/contacts.html",
+      ...defaults,
+    },
+    {
+      "label": "products",
+      "url": "./dist/products.html",
+      ...defaults,
     }
-  ],
+ ],
   "paths": {
     "bitmaps_reference": "backstop_data/bitmaps_reference",
     "bitmaps_test": "backstop_data/bitmaps_test",
