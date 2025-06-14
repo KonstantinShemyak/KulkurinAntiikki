@@ -13,7 +13,7 @@
     "test": "npx backstop test --config=\"backstop.config.js\"",
     "test:approve": "npx backstop approve --config=\"backstop.config.js\"",
     "sass": "node-sass scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "deploy": "lftp -e 'mirror -rRv dist/ www/' sftp://kulkurinantiikki.fi"
   },
   "repository": {
     "type": "git",
